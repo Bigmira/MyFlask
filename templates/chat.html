@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'common.html' %}
+{% block title %}chat页面{% endblock %}
+{% block container %}
+    <div>
+        <div class="rr"> chat to me</div>
+
+     {% for item in data %}
+     <p style="color:navy">{{item}}</p>
+    {% endfor %}
+        <hr>
+
+    </div>
+
+
+
+
+    </div>
+
+    <div>
+        <form action="/chatProcess" method="post">
+        <textarea name="chat" id="chat" rows="10" cols="80"></textarea> <br>
+        <button id="go" name="bt1" type="submit">发送></button>
+        </form>
+    </div>
+    </div>
+
+
+
+
+
+    </div>
+    <div style="clear:both;"></div>
+    </div>
+    {% endblock %}

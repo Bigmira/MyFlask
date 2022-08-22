@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title {% endblock %} </title>
+    <style>
+        .header, .footer {
+            height: 35px;
+            width: 100%;
+            margin: 0 auto;
+            background: #D8BFD8;
+            color: #E6E6FA;
+        }
+
+        .header li {
+            list-style: none;
+            display: inline;
+            width: 300px;
+            margin: 0px 20px;
+            color: #483D8B;
+        }
+
+        .container {
+            height: 100px;
+            width: 100%;
+            border: 1px solid #483D8B;
+        }
+
+        .footer {
+            font-size: 12px;
+            text-align: center;
+            height: 20px;
+        }
+    </style>
+    <title>Welcome to Hufflepuff work</title>
+</head>
+<body background="{{ url_for('static',filename='img/bg_main.jpg')}}">
+{% block header %}
+
+<div>
+    <div class="header">
+        <ul>
+            <li><a href="/ ">Index</a></li>
+            <li><a href="{{ url_for('chat.chatpage') }}">Chat To Me</a></li>
+            <li><a href="{{ url_for('life.lifepage') }}">My Life</a></li>
+            <li><a href="{{ url_for('work.workpage') }}">My work</a></li>
+            <li>其他</li>
+        </ul>
+    </div>
+    {% endblock %}
+    {% block container %}
+    <div>content</div>
+    {% endblock %}
+    {% block footer %}
+    <img src="{{ url_for('static',filename='img/img_001.jpg')}}" width="1200" height="500"  alt="">
+    <div>made by Big Mira Wang. 联系方式：dawhl413@163.com</div>
+    {% endblock %}
+</body>
+</html>

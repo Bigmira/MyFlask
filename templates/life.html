@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'common.html' %}
+{% block title %}life页面{% endblock %}
+{% block container %}
+    <div>
+        Welcome to Hufflepuff life
+    <br>
+    <hr>
+
+        <div align="center" style="margin-top: 40px;">
+    <form action="/lifepageadd" method="post">
+        id  <input type="text" placeholder="id" name="id">
+        大项 <input type="text" placeholder="f_type" name="f_type">
+        小项 <input type="text" placeholder="s_type" name="s_type">
+        说明 <input type="text" placeholder="content" name="content">
+        <input type="submit" value="提交" οnclick="">
+    </form>
+
+
+</div>
+
+        <div>
+    <p>今日生活</p>
+    {% for item in data %}
+     <p style="color:navy">{{item}}</p>
+    {% endfor %}
+    <hr>
+
+    </div>
+
+    </div>
+    {% endblock %}
+
